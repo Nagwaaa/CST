@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules\\.bin\\cypress run",
+    "headed": "node_modules\\.bin\\cypress run --headed --browser chrome",
+    "Dashboard": "node_modules\\.bin\\cypress run --record --key db5fef36-791d-4331-9e93-755432202ba1 --headed --browser chrome"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cypress": "^13.6.6"
+  },
+  "devDependencies": {
+    "cypress-file-upload": "^5.0.8"
   }
 }

@@ -1,8 +1,8 @@
 import LoginPage from '../Pages/LoginPage'
 import homePage from '../Pages/homePage'
 
-
-// Login to CST With diffrent cases
+//to run dashboard use "npm run Dashboard"
+// Login to CST With diffrent cases     
 describe('loginToCST',()=>
 {
     const login =new LoginPage()
@@ -63,6 +63,7 @@ describe('loginToCST',()=>
             cy.get('#LoginInput_UserNameOrEmailAddress-error').should('have.text',userPassword.userNameRequired)
         })
     })
+
     it('PasswordRequired',()=>
     {
 
@@ -74,6 +75,7 @@ describe('loginToCST',()=>
             cy.get('#LoginInput_Password-error').should('have.text',userPassword.passwordRequired)
         })
     })
+
     it('UsernameAndPasswordRequired',()=>
     {
         cy.fixture('usersData').then(function(userPassword)
@@ -85,15 +87,15 @@ describe('loginToCST',()=>
             cy.get('#LoginInput_Password-error').should('have.text',userPassword.passwordRequired)
 
         })
-        })
+    })
 
 
-        it('loginWithValidUsernameAndPassword',()=>
-        {
-            cy.fixture('usersData').then(function(userPassword)
+    it('loginWithValidUsernameAndPassword',()=>
+    {
+        cy.fixture('usersData').then(function(userPassword)
             {
                 cy.login(userPassword.username,userPassword.password)
                 homepage.getContainerMenu().should('exist')
             })
-        })
     })
+})

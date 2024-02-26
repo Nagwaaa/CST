@@ -6,7 +6,30 @@
     "passwordInv":"123",
     "invMessage":"خطأ في اسم المستخدم أو كلمة مرور!",
     "userNameRequired":"الحقل اسم المستخدم أو البريد الالكتروني إجباري.",
-    "passwordRequired":"الحقل كلمه السر إجباري."
+    "passwordRequired":"الحقل كلمه السر إجباري.",
+
+    "Contain":" الوثائق قيد الاعتماد",
+    
+    "docName":"وثيقة فور اتوميشن",
+    "nameEN":"Document for automation",
+    "docNameSup":"انجلش وثيقة فور اتوميشن",
+    "nameENsup":"Document for automation",
+    "docNameUp":"تعديل وثيقة فور اتوميشن1",
+    "nameENup":"Document for automation updat1",
+    
+    "sector":"قطاع الطيف الترددي",
+    "dep":"الإدارة العامة لتخطيط الطيف الترددي",
+    "type":"النماذج",
+    "year":"2025",
+    "month":"نوفمبر",
+    "day":"20",
+    "path":"files/doc.pdf",
+    "image":"files/ev4.jpg",
+    "message":"تمت عملية ( إضافة وثيقة ) بنجاح ",
+    "delMess":"تمت عملية ( حذف وثيقة ) بنجاح ",
+    "upMess":"تمت عملية ( تعديل وثيقة ) بنجاح "
+    
+
 
 }
 

@@ -1,4 +1,5 @@
 import LoginPage from '../Pages/LoginPage'
+import 'cypress-file-upload'
 
 // ***********************************************
 // This example commands.js shows you how to
@@ -13,18 +14,19 @@ import LoginPage from '../Pages/LoginPage'
 //
 // -- This is a parent command --
 //
+        const login=new LoginPage()
        Cypress.Commands.add('login', (username, password) => {
-            const login=new LoginPage()
+           
             login.getUsername(username)
             login.getPassword(password)
             login.LoginSubmit()
        })
 //
 
-    Cypress.Commands.add('SetSttings', (setting,subSetting) => { 
+    Cypress.Commands.add('SetSttings', (subSetting) => { 
         cy.get(".icon-menu-container").click()
-        cy.get('.parent-menu > .ng-scrollbar > .ng-scrollbar-wrapper > .ng-scroll-viewport-wrapper > .ng-native-scrollbar-hider > .ng-scroll-content > ul > :nth-child(7) > .menu-item-name > span').contains(setting).click()
-        cy.get('.inner-sidebar > .ng-scrollbar > .ng-scrollbar-wrapper > .ng-scroll-viewport-wrapper > .ng-native-scrollbar-hider > .ng-scroll-content > ul > :nth-child(8) > .menu-item-name').contains(subSetting).click()
+        cy.get("#CMSService\\:\\:Menu\\:Settings").click()
+        cy.get('#CMSService\\:\\:Menu\\:ApprovedDocumentLibrary').click()
 
     })
 
@@ -44,6 +46,21 @@ import LoginPage from '../Pages/LoginPage'
 
     Cypress.Commands.add('SearchFor', (selector,word) => { 
         cy.get(selector).type(word)
+    })
+
+    Cypress.Commands.add('FindSpeceficContent', (ele,sel) => { 
+
+        cy.get('#filterTxt').clear().type(ele)
+         cy.wait(1000)
+         cy.get('.ngx-datatable-card').find('.datatable-row-wrapper.ng-star-inserted').each(($l,index,$list)=>
+        {
+         const name=$l.find('.text-bold.ng-star-inserted').text()
+         if(name.includes(ele))
+         {
+             cy.get(sel).first().click('center',{force: true})
+             return false
+         }
+     })
     })
 
   

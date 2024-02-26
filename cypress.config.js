@@ -9,6 +9,7 @@ module.exports = defineConfig({
     baseUrl:'https://stg-cst.starwayseg.com/',
     defaultCommandTimeout: 5000,
     viewportWidth:1260,
-    viewportHeight:800
+    viewportHeight:800,
+    projectId:"s4h1rp"
   },
 });
