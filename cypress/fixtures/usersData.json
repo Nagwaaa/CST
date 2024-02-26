@@ -4,7 +4,10 @@
     "password": "1q2w3E*",
     "usernameInv":"abc",
     "passwordInv":"123",
-    "mess":"خطأ في اسم المستخدم أو كلمة مرور!"
+    "invMessage":"خطأ في اسم المستخدم أو كلمة مرور!",
+    "userNameRequired":"الحقل اسم المستخدم أو البريد الالكتروني إجباري.",
+    "passwordRequired":"الحقل كلمه السر إجباري."
+
 }
 
 

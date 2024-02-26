@@ -1,28 +1,30 @@
 import LoginPage from '../Pages/LoginPage'
+import homePage from '../Pages/homePage'
 
 
 // Login to CST With diffrent cases
 describe('loginToCST',()=>
 {
     const login =new LoginPage()
+    const homepage=new homePage()
 
     beforeEach(()=>
     {
         cy.visit('/')
+        /* this code to pass all fail testcases 
         cy.on('fail', (err, runnable) => {
-             return true; 
-        })
+             //return true; 
+             console.log(err.message)
+        })*/
 
     })
 
     it('loginWithInvalidUsernameAndPassword',()=>
     {
-        cy.fixture('usersData').then(function(user)
+        cy.fixture('usersData').then(function(userPassword)
         {
-            login.getUsername(user.usernameInv)
-            login.getPassword(user.passwordInv)
-            login.LoginSubmit()
-            cy.get('.alert.alert-danger.alert-dismissible.fade.show').should('contain',user.mess)
+            cy.login(userPassword.usernameInv,userPassword.passwordInv)
+            cy.get('.alert.alert-danger.alert-dismissible.fade.show').should('contain',userPassword.invMessage)
         })
         
     })
@@ -30,24 +32,20 @@ describe('loginToCST',()=>
     it('loginWithInvalidUsernameAndValidPassword',()=>
     {
 
-        cy.fixture('usersData').then(function(user)
+        cy.fixture('usersData').then(function(userPassword)
         {
-            login.getUsername(user.usernameInv)
-            login.getPassword(user.password)
-            login.LoginSubmit()
-            cy.get('.alert.alert-danger.alert-dismissible.fade.show').should('contain',user.mess)
+            cy.login(userPassword.usernameInv,userPassword.password)
+            cy.get('.alert.alert-danger.alert-dismissible.fade.show').should('contain',userPassword.invMessage)
         })
     })
 
     it('loginWithValidUsernameAndInvalidPassword',()=>
     {
  
-        cy.fixture('usersData').then(function(user)
+        cy.fixture('usersData').then(function(userPassword)
         {
-            login.getUsername(user.username)
-            login.getPassword(user.passwordInv)
-            login.LoginSubmit()
-            cy.get('.alert.alert-danger.alert-dismissible.fade.show').should('contain',user.mess)
+            cy.login(userPassword.username,userPassword.passwordInv)
+            cy.get('.alert.alert-danger.alert-dismissible.fade.show').should('contain',userPassword.invMessage)
         })
     })
 
@@ -56,34 +54,34 @@ describe('loginToCST',()=>
     it('UsernameRequired',()=>
     {
 
-        cy.fixture('usersData').then(function(user)
+        cy.fixture('usersData').then(function(userPassword)
         {
-            login.getUsername("abc").clear()
-            login.getPassword("123")
+            login.getUsername(userPassword.username).clear()
+            login.getPassword(userPassword.password)
             login.LoginSubmit()
-            cy.get('#LoginInput_UserNameOrEmailAddress-error').should('have.text','الحقل اسم المستخدم أو البريد الالكتروني إجباري.')
+            cy.get('#LoginInput_UserNameOrEmailAddress-error').should('have.text',userPassword.userNameRequired)
         })
     })
     it('PasswordRequired',()=>
     {
 
-        cy.fixture('usersData').then(function(user)
+        cy.fixture('usersData').then(function(userPassword)
         {
-            login.getUsername("abc")
-            login.getPassword("123").clear()
+            login.getUsername(userPassword.username)
+            login.getPassword(userPassword.password).clear()
             login.LoginSubmit()
-            cy.get('#LoginInput_Password-error').should('have.text','الحقل كلمه السر إجباري.')
+            cy.get('#LoginInput_Password-error').should('have.text',userPassword.passwordRequired)
         })
     })
     it('UsernameAndPasswordRequired',()=>
     {
-        cy.fixture('usersData').then(function(user)
+        cy.fixture('usersData').then(function(userPassword)
         {
-            login.getUsername("abc").clear()
-            login.getPassword("123").clear()
+            login.getUsername(userPassword.username).clear()
+            login.getPassword(userPassword.password).clear()
             login.LoginSubmit()
-            cy.get('#LoginInput_UserNameOrEmailAddress-error').should('have.text','الحقل اسم المستخدم أو البريد الالكتروني إجباري.')
-            cy.get('#LoginInput_Password-error').should('have.text','الحقل كلمه السر إجباري.')
+            cy.get('#LoginInput_UserNameOrEmailAddress-error').should('have.text',userPassword.userNameRequired)
+            cy.get('#LoginInput_Password-error').should('have.text',userPassword.passwordRequired)
 
         })
         })
@@ -91,12 +89,10 @@ describe('loginToCST',()=>
 
         it('loginWithValidUsernameAndPassword',()=>
         {
-            cy.fixture('usersData').then(function(user)
+            cy.fixture('usersData').then(function(userPassword)
             {
-                login.getUsername(user.username)
-                login.getPassword(user.password)
-                login.LoginSubmit()
-                cy.get('.header-content-item.icon-menu-container').should('exist')
+                cy.login(userPassword.username,userPassword.password)
+                homepage.getContainerMenu().should('exist')
             })
         })
     })
