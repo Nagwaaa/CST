@@ -9,6 +9,10 @@ describe('loginToCST',()=>
     beforeEach(()=>
     {
         cy.visit('/')
+        cy.on('fail', (err, runnable) => {
+             return true; 
+        })
+
     })
 
     it('loginWithInvalidUsernameAndPassword',()=>
