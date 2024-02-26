@@ -23,6 +23,7 @@ describe('loginToCST',()=>
     {
         cy.fixture('usersData').then(function(userPassword)
         {
+            // login function exists in command.js file
             cy.login(userPassword.usernameInv,userPassword.passwordInv)
             cy.get('.alert.alert-danger.alert-dismissible.fade.show').should('contain',userPassword.invMessage)
         })
