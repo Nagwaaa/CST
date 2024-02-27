@@ -37,7 +37,7 @@ describe('AnnouncementManagementHR',()=>
         cy.fixture('usersData').then(function(data)
         {
             announc.SearchForAnnouncementEit(data.annoucTitle,'.btn.btn-outline-primary.ng-star-inserted')
-            announc.addAnnouncement("anntestssss",data.announcementDesc,data.day,data.month,data.year,data.day,data.month,data.year)
+            announc.addAnnouncement(data.annoucTitle,data.announcementDesc,data.day,data.month,data.year,data.day,data.month,data.year)
             delDoc.clicksOnDelete()
             cy.wait(1000)
         })
