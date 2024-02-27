@@ -35,6 +35,7 @@ class AddUpadteDocPage
 
         cy.get('.btn.btn-primary.me-2').click()
         cy.get('#confirm').click()
+        cy.wait(1000)
     }
 
     addUpadteDocument(nameAr,attach,sector,dep,type,year,month,day,note='')
@@ -55,6 +56,7 @@ class AddUpadteDocPage
         cy.get('#notes').clear().type(note)
         cy.get('.btn.btn-primary.me-2').click()
         cy.get('#confirm').click()
+        cy.wait(1000)
         
     }
 

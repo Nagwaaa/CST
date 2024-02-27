@@ -10,6 +10,7 @@ module.exports = defineConfig({
     defaultCommandTimeout: 5000,
     viewportWidth:1260,
     viewportHeight:800,
-    projectId:"s4h1rp"
+    projectId:"s4h1rp",
+    downloadsFolder: 'cypress/files/downloads',
   },
 });

@@ -14,18 +14,17 @@ import 'cypress-file-upload'
 //
 // -- This is a parent command --
 //
-        const login=new LoginPage()
-       Cypress.Commands.add('login', (username, password) => {
-           
-            login.getUsername(username)
-            login.getPassword(password)
-            login.LoginSubmit()
-       })
-//
+    const login=new LoginPage()
+    Cypress.Commands.add('login', (username, password) => {
+        
+        login.getUsername(username)
+        login.getPassword(password)
+        login.LoginSubmit()
+    })
 
-    Cypress.Commands.add('SetSttings', (subSetting) => { 
+    Cypress.Commands.add('SetSettings', (subSetting) => { 
         cy.get(".icon-menu-container").click()
-        cy.get("#CMSService\\:\\:Menu\\:Settings").click()
+        cy.get("#CMSService\\:\\:Menu\\:Settings").click('center')
         cy.get('#CMSService\\:\\:Menu\\:ApprovedDocumentLibrary').click()
 
     })

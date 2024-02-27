@@ -12,6 +12,8 @@ describe('adminManageDocuments',()=>
         cy.fixture('usersData').then(function(userPassword)
         {
            cy.login(userPassword.username,userPassword.password)
+           cy.wait(1000)
+           cy.SetSettings(userPassword.Contain)
         })
     })
     
@@ -21,7 +23,6 @@ describe('adminManageDocuments',()=>
        
        cy.fixture('usersData').then(function(data)
        {
-         cy.SetSttings(data.Contain)
          addDoc.clickOnAddDocument()
          addDoc.addUpadteDocument(data.docName,data.image,data.sector,data.dep,data.type,data.year,data.month,data.day,"nooote")
          cy.get(".abp-toast-message").last().should('have.text',data.message)
@@ -35,7 +36,6 @@ describe('adminManageDocuments',()=>
 
        cy.fixture('usersData').then(function(data)
        {
-         cy.SetSttings(data.Contain)
          addDoc.clickOnAddDocument()
          cy.get('#support').check()
          addDoc.addUpadteDocumentSupport(data.docNameSup,data.nameENsup,data.image,data.image,data.sector,data.dep,data.type,data.year,data.month,data.day,"nooot")
@@ -45,17 +45,16 @@ describe('adminManageDocuments',()=>
 
     })
 
-    it.only('UpdateDocument',()=>
+    it('UpdateDocument',()=>
      {
         
        cy.fixture('usersData').then(function(data)
        {
-         cy.SetSttings(data.Contain)
+
          cy.FindSpeceficContent(data.docName,'.table-actions > :nth-child(2) > .icon-pencil')
-        
-        cy.get('#support').as('checkbox')
-        .invoke('is', ':checked')
-        .then(checked => {
+         cy.get('#support').as('checkbox')
+         .invoke('is', ':checked')
+         .then(checked => {
           if (checked) {
             addDoc.deleteAttachInUpdateSupport()
             addDoc.addUpadteDocumentSupport(data.docNameSup,data.nameENsup,data.image,data.image,data.sector,data.dep,data.type,data.year,data.month,data.day,"nooot")
@@ -72,18 +71,13 @@ describe('adminManageDocuments',()=>
  })
 
 
-     
-
-
     it('AdminDownloadAttachment',()=>
     {
-
        cy.fixture('usersData').then(function(data)
        {
-         cy.SetSttings(data.Contain)
-         cy.FindSpeceficContent(data.docName,'.icon-download')
-         cy.wait(2000)
+         cy.FindSpeceficContent(data.docNameSup,'.icon-download')
          cy.readFile('C:/Users/Ts/Desktop/CST/cypress/downloads/'+data.image).should('exist')
+        
        })
     })
     
@@ -93,13 +87,11 @@ describe('adminManageDocuments',()=>
     
        cy.fixture('usersData').then(function(data)
        {
-         cy.SetSttings(data.Contain)
-
-         cy.FindSpeceficContent(data.docName,'.form-check-input.ng-untouched.ng-pristine.ng-valid')
+         cy.FindSpeceficContent(data.docNameSup,'.form-check-input.ng-untouched.ng-pristine.ng-valid')
          delDoc.clicksOnDelete()
          cy.get('.abp-toast-message').should('have.text',' تمت عملية ( تعطيل وثيقة ) بنجاح ')
          
-         cy.FindSpeceficContent(data.docName,'.form-check-input.ng-untouched.ng-pristine.ng-valid')
+         cy.FindSpeceficContent(data.docNameSup,'.form-check-input.ng-untouched.ng-pristine.ng-valid')
          delDoc.clicksOnDelete()
          cy.get('.abp-toast-message').should('have.text','تمت عملية ( تفعيل وثيقة ) بنجاح ')
 
@@ -111,8 +103,7 @@ describe('adminManageDocuments',()=>
    {
     cy.fixture('usersData').then(function(data)
     {
-        cy.SetSttings(data.Contain)
-        cy.FindSpeceficContent(data.docName,'.icon-trash')
+        cy.FindSpeceficContent(data.docNameSup,'.icon-trash')
         delDoc.clicksOnDelete()
         cy.get('.abp-toast-message').should('have.text',data.delMess)
 

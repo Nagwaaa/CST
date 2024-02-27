@@ -19,6 +19,15 @@ describe('loginToCST',()=>
 
     })
 
+    it('loginWithValidUsernameAndPassword',()=>
+    {
+        cy.fixture('usersData').then(function(userPassword)
+            {
+                cy.login(userPassword.username,userPassword.password)
+                homepage.getContainerMenu().should('exist')
+            })
+    })
+    
     it('loginWithInvalidUsernameAndPassword',()=>
     {
         cy.fixture('usersData').then(function(userPassword)
@@ -90,12 +99,4 @@ describe('loginToCST',()=>
     })
 
 
-    it('loginWithValidUsernameAndPassword',()=>
-    {
-        cy.fixture('usersData').then(function(userPassword)
-            {
-                cy.login(userPassword.username,userPassword.password)
-                homepage.getContainerMenu().should('exist')
-            })
-    })
 })

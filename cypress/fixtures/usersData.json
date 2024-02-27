@@ -1,7 +1,7 @@
 {
 
-    "username": "admin",
-    "password": "1q2w3E*",
+    "username": "nabdalgalil",
+    "password": "P@ssw0rd",
     "usernameInv":"abc",
     "passwordInv":"123",
     "invMessage":"خطأ في اسم المستخدم أو كلمة مرور!",
@@ -10,7 +10,7 @@
 
     "Contain":" الوثائق قيد الاعتماد",
     
-    "docName":"وثيقة فور اتوميشن",
+    "docName":"DocumentArabic",
     "nameEN":"Document for automation",
     "docNameSup":"انجلش وثيقة فور اتوميشن",
     "nameENsup":"Document for automation",
@@ -27,7 +27,17 @@
     "image":"files/ev4.jpg",
     "message":"تمت عملية ( إضافة وثيقة ) بنجاح ",
     "delMess":"تمت عملية ( حذف وثيقة ) بنجاح ",
-    "upMess":"تمت عملية ( تعديل وثيقة ) بنجاح "
+    "upMess":"تمت عملية ( تعديل وثيقة ) بنجاح ",
+    "annoucTitle":"تعميم فور اتوميشن",
+    "announcementDesc":"Description",
+    "employeeName":"سلطان عبدالعزيز",
+    "newName":"NewsForAutomation",
+    "newsDesc":"New Description"
+
+
+
+
+
     
 
 
