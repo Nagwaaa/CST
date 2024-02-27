@@ -98,6 +98,15 @@ describe('adminManageDocuments',()=>
        })
     })
 
+    it('AdvancFilter',()=>
+    {
+     cy.fixture('usersData').then(function(data)
+     {
+         addDoc.AdvancedFilter(data.sector,data.dep,data.type,"مفعل")
+         
+ 
+     })
+    })
     
     it('AdminDeleteDocument',()=>
    {

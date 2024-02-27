@@ -90,5 +90,37 @@ class AddUpadteDocPage
            return ch
         });
     }
+
+    AdvancedFilter(sector=" ",dept=" ",type=" ",status=" ")
+    {
+        cy.get('.btn.btn-outline-light.btn-filter-action.ms-1.ng-star-inserted').click()
+        cy.get('.ng-input').first().type(sector)
+        cy.get('.ng-option-label.ng-star-inserted').click()
+
+        cy.get('.ng-input').eq(1).type(dept)
+        cy.get('.ng-option.ng-star-inserted').click()
+
+        cy.get('.ng-input').eq(2).type(type)
+        cy.get('.ng-option.ng-star-inserted.ng-option-marked').click()
+
+        cy.get('.ng-input').last().type(status)
+        cy.get('.ng-option.ng-star-inserted').first().click()
+
+        cy.get('.btn.btn-primary').click()
+
+        
+
+          /* Code 
+             
+             cy.get('.nodata-message.ng-star-inserted').then(($element) => {
+             if ($element.length > 0) {
+              cy.log('Element exist');
+             } else {
+              cy.log('Element does not exist');
+             }
+          });
+          */
+        
+    }
 }
 export default AddUpadteDocPage;

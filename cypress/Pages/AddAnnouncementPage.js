@@ -58,6 +58,8 @@ class AddAnnouncementPage
   ClickOnDeleteAnnouncement()
   {
     cy.get('.icon-trash').click()
-  } 
+  }
+  
+ 
 }
 export default AddAnnouncementPage;
