@@ -9,7 +9,7 @@
         
         cy.get('#RelatedEmployeeCheckbox').click()
         cy.wait(1000)
-        cy.get('.cdk-virtual-scroll-content-wrapper').find('.ng-tns-c294568263-3.ng-star-inserted').each(($l,index,$list)=>
+        cy.get('.cdk-virtual-scroll-content-wrapper').find('.ng-tns-c294568263-3.ng-star-inserted:visible').each(($l,index,$list)=>
         {
 
             cy.wrap($list).find('.d-flex.flex-wrap.align-items-center').eq(index).click()
