@@ -31,7 +31,7 @@ class homePage
     {
         cy.get('#employee-guide-search-input').type(name)
         cy.get('.d-flex.flex-wrap.align-items-center.ng-tns-c469332416-10').click()
-        cy.wait(2000)
+        //cy.wait(2000)
 
         cy.get('.badge').then(($el)=>
         {
