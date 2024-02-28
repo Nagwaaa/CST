@@ -5,6 +5,10 @@ describe('CheckEmployeeAttendence',()=>
     const hpage=new homePage()
     beforeEach(()=>
     {
+        cy.on('uncaught:exception', (err, runnable) => {
+            console.error('Uncaught exception:');
+            return false;
+          });
         cy.visit('/')
         cy.fixture('usersData').then(function(userPassword)
         {

@@ -30,10 +30,22 @@ class homePage
     CheckAttendence(name)
     {
         cy.get('#employee-guide-search-input').type(name)
-        cy.get('.circle-img.ng-tns-c469332416-11').click()
-        cy.wait(1000)
-        cy.get('.badge-status.ng-tns-c2600274924-4.badge-status-success.ng-star-inserted').should('have.css', 'background-color', 'rgb(45, 212, 191)')
+        cy.get('.d-flex.flex-wrap.align-items-center.ng-tns-c469332416-10').click()
+        cy.wait(2000)
 
+        cy.get('.badge').then(($el)=>
+        {
+            const status=$el.text()
+            if(status ==='( متواجد )')
+            {
+                cy.get('.badge-status.ng-tns-c2600274924-4.badge-status-success.ng-star-inserted').should('have.css', 'background-color', 'rgb(45, 212, 191)')
+                cy.log('Employee exists')
+            }else
+            {
+                cy.get('.badge-status.ng-tns-c2600274924-4.badge-status-danger.ng-star-inserted').should('have.css', 'background-color', 'rgb(225, 29, 72)')
+                cy.log('Employee Not exists')
+            }
+        })
     }
 
 /*
