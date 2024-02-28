@@ -107,19 +107,12 @@ class AddUpadteDocPage
         cy.get('.ng-option.ng-star-inserted').first().click()
 
         cy.get('.btn.btn-primary').click()
-
-        
-
-          /* Code 
-             
-             cy.get('.nodata-message.ng-star-inserted').then(($element) => {
-             if ($element.length > 0) {
-              cy.log('Element exist');
-             } else {
-              cy.log('Element does not exist');
-             }
-          });
-          */
+/*
+        cy.get('.datatable-scroll.ng-star-inserted').find('.datatable-row-wrapper.ng-star-inserted').each(($l,index,$list)=>
+        {
+         const name=$l.find('.column-label.ng-star-inserted').text()
+          
+     })*/
         
     }
 }
