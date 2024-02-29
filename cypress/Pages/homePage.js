@@ -56,6 +56,23 @@ class homePage
        cy.get('.service-view.ng-star-inserted').first().type(serveceName)
        cy.get('.service-edit-action')
     }*/
+
+
+    getMainMenu()
+    {
+     return cy.get(".header-content-item.icon-menu-container").click();
+    }
+    getSettingsMenu()
+    {
+     return cy.get('#CMSService\\:\\:Menu\\:Settings').click();
+    }
+    getMediaList()
+    {
+     return cy.get("#CMSService\\:\\:Menu\\:MediaLibrarySetting").click();
+
+    }
+
+
 }
 
  export default homePage;

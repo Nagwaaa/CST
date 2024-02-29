@@ -32,8 +32,22 @@
     "announcementDesc":"Description",
     "employeeName":"افراح حمد محمد a",
     "newName":"NewsForAutomation",
-    "newsDesc":"New Description"
-    
+    "newsDesc":"New Description",
+    "MediaTitleAR":"وسائط للهيئة جديدة",
+    "MediaTitleEN":"New Media_Image",
+    "MediaTitleVAR":"هيئة الاتصالات فيديو جديد",
+    "MediaTitleVForEdit":"New Media_Videoedit",
+    "HashTag":"CST_Video",
+    "HashTagForEdit":"New_Video_Edit",
+    "MediaType_img":"صورة",
+    "MediaType_video":"فيديو",
+    "VideoCode":"E-mJxde_-uQ",
+    "VideoCodeForEdit":"76G8Oqrl9sk",
+    "ToastMessage":"تم حفظ البيانات بنجاح",
+    "yearForEdit":"2024",
+    "monthForEdit":"مارس",
+    "dayForEdit":"20",
+    "ToastMsgFordelete":"تم الحذف بنجاح"
 
 
 
