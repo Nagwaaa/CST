@@ -29,21 +29,26 @@ class homePage
 
     CheckAttendence(name)
     {
-        cy.get('#employee-guide-search-input').type(name)
-        cy.get('.d-flex.flex-wrap.align-items-center.ng-tns-c469332416-10').click()
+        cy.get('#employee-guide-search-input').clear().type(name)
+        cy.wait(2000)
+        cy.get('.d-flex.flex-wrap.align-items-center').click()
         //cy.wait(2000)
 
         cy.get('.badge').then(($el)=>
         {
-            const status=$el.text()
+            let status=$el.text()
             if(status ==='( متواجد )')
             {
                 cy.get('.badge-status.ng-tns-c2600274924-4.badge-status-success.ng-star-inserted').should('have.css', 'background-color', 'rgb(45, 212, 191)')
-                cy.log('Employee exists')
-            }else
+                cy.log('Avaliabe')
+            }
+            else if(status ==='( غير متواجد )')
             {
                 cy.get('.badge-status.ng-tns-c2600274924-4.badge-status-danger.ng-star-inserted').should('have.css', 'background-color', 'rgb(225, 29, 72)')
-                cy.log('Employee Not exists')
+                cy.log('Not avaliable')
+            }else
+            {
+                cy.log("This Employee doesn't in Employee Directory")
             }
         })
     }

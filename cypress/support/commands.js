@@ -39,6 +39,28 @@ import 'cypress-file-upload'
     })
 
 
+    Cypress.Commands.add('GetUserName', () => { 
+        
+         cy.get(':nth-child(1) > .text')
+         .invoke('text')
+         .then((uname) => {
+            const userArray=uname.split()
+            const username=userArray[0]
+            console.log(username)
+            return username
+        })
+        
+        /*
+        cy.get(':nth-child(1) > .text').then((username)=>
+        {
+            let uname=username.text()
+            
+        })*/
+         
+        
+    })
+
+
     Cypress.Commands.add('UploadAttahment', (path,index) => { 
         cy.get(".FileUpload").eq(index).attachFile(path, { subjectType: 'drag-n-drop' });
     })

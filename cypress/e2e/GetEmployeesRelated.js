@@ -3,6 +3,7 @@ import homePageRelatedToMePage from '../Pages/homePageRelatedToMePage'
 
 describe('EmployeesRealtedToMe',()=>
 {
+    let unamee;
     const hpage=new homePage()
     const employeeRelated=new homePageRelatedToMePage()
     beforeEach(()=>
@@ -18,8 +19,20 @@ describe('EmployeesRealtedToMe',()=>
 
     it("EmployeesRealtedToMeTC",()=>
     {
-        hpage.ClicksOnEmployeeGuides()
-        employeeRelated.GetRelatedToMeEmployees()
+
+        cy.wait(2000)
+        cy.get(':nth-child(1) > .text')
+        .invoke('text')
+        .then((uname) => {
+            
+           const userArray=uname.split('،')
+           const username=userArray[1].trim()
+           hpage.ClicksOnEmployeeGuides()
+           employeeRelated.GetRelatedToMeEmployees(username)
+      
+        })
+       
+       
     })
 
 })
