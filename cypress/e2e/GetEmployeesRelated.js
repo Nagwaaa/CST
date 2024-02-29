@@ -24,11 +24,13 @@ describe('EmployeesRealtedToMe',()=>
         cy.get(':nth-child(1) > .text')
         .invoke('text')
         .then((uname) => {
-            
+
            const userArray=uname.split('،')
            const username=userArray[1].trim()
            hpage.ClicksOnEmployeeGuides()
            employeeRelated.GetRelatedToMeEmployees(username)
+
+           cy.log('nnnn')
       
         })
        
