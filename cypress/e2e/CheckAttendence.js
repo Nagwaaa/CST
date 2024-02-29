@@ -21,9 +21,14 @@ describe('CheckEmployeeAttendence',()=>
     it('CheckEmplyeePresent',()=>
     {
         hpage.ClicksOnEmployeeGuides()
-        cy.fixture('usersData').then(function(data)
+        cy.fixture('AttendenceTestData').then(function(data)
         {
-            hpage.CheckAttendence(data.employeeName)
+            data.forEach((user) => {
+                hpage.CheckAttendence(user.username)
+                cy.get('.flip-icon.icon-arrow-left.return-icon').click()
+                
+            })
+            
         })
        
     })
