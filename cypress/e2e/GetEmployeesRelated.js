@@ -25,16 +25,13 @@ describe('EmployeesRealtedToMe',()=>
         .invoke('text')
         .then((uname) => {
 
-           const userArray=uname.split('،')
-           const username=userArray[1].trim()
-           hpage.ClicksOnEmployeeGuides()
-           employeeRelated.GetRelatedToMeEmployees(username)
-
-           cy.log('nnnn')
-      
+          const userArray=uname.split('،')
+          const username=userArray[1].trim()
+          hpage.ClicksOnEmployeeGuides()
+          employeeRelated.GetRelatedToMeEmployees(username)
+          cy.get('.close-icon > .icon-x').click()
         })
-       
-       
+        
     })
 
 })

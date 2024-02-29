@@ -40,12 +40,12 @@ class homePage
             if(status ==='( متواجد )')
             {
                 cy.get('.badge-status.ng-tns-c2600274924-4.badge-status-success.ng-star-inserted').should('have.css', 'background-color', 'rgb(45, 212, 191)')
-                cy.log('Avaliabe')
+                cy.log('available')
             }
             else if(status ==='( غير متواجد )')
             {
                 cy.get('.badge-status.ng-tns-c2600274924-4.badge-status-danger.ng-star-inserted').should('have.css', 'background-color', 'rgb(225, 29, 72)')
-                cy.log('Not avaliable')
+                cy.log('Not available')
             }else
             {
                 cy.log("This Employee doesn't in Employee Directory")

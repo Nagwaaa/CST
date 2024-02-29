@@ -2,6 +2,9 @@
 
     "username": "nabdalgalil",
     "password": "P@ssw0rd",
+
+    "sectorName":"tjonaid",
+    "sectorPassword":"P@ssw0rd",
     "usernameInv":"abc",
     "passwordInv":"123",
     "invMessage":"خطأ في اسم المستخدم أو كلمة مرور!",
@@ -32,7 +35,8 @@
     "announcementDesc":"Description",
     "employeeName":"افراح حمد محمد a",
     "newName":"NewsForAutomation",
-    "newsDesc":"New Description"
+    "newsDesc":"New Description",
+    "sectorDeptartment":"الإدارة العامة لمراقبة الطيف الترددي"
     
 
 

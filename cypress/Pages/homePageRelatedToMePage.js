@@ -26,8 +26,7 @@
                   }
                   else
                   {
-                     cy.log(manager)
-                     cy.log("this manager doesn't exists")
+                     cy.log("This manager doesn't exists")
    
                   }
                

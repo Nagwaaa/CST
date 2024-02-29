@@ -1,4 +1,4 @@
-class AddUpadteDocPage
+class sectorAddUpdateDocPage
 {
 
 
@@ -11,7 +11,7 @@ class AddUpadteDocPage
     {
         cy.get('.btn.btn-outline-primary.btn-action-edit.ng-star-inserted').click()
     }
-    addUpadteDocumentSupport(nameAr,nameEN,attach1,attach2,sector,dep,type,year,month,day,note='')
+    addUpadteDocumentSupport(nameAr,nameEN,attach1,attach2,dep,type,year,month,day,note='')
     {
         cy.get('#fileNameAr').clear().type(nameAr)
         cy.get('#fileNameEn').clear().type(nameEN)
@@ -19,9 +19,6 @@ class AddUpadteDocPage
         cy.UploadAttahment(attach1,0)
         cy.UploadAttahment(attach2,1)
         cy.wait(6000)
-
-        cy.get(".ng-input").first().type(sector)
-        cy.get(".ng-option-marked").click()
         
         cy.get(".ng-input").eq(1).type(dep)
         cy.get(".ng-option-marked").click()
@@ -38,14 +35,12 @@ class AddUpadteDocPage
         cy.wait(1000)
     }
 
-    addUpadteDocument(nameAr,attach,sector,dep,type,year,month,day,note='')
+    addUpadteDocument(nameAr,attach,dep,type,year,month,day,note='')
     {
        
         cy.get('#fileNameAr').clear().type(nameAr)
         cy.UploadAttahment(attach,0)
         cy.wait(6000)
-        cy.get(".ng-input").first().type(sector)
-        cy.get(".ng-option-marked").click()
         
         cy.get(".ng-input").eq(1).type(dep)
         cy.get(".ng-option-marked").click()
@@ -133,4 +128,4 @@ class AddUpadteDocPage
         
     }
 }
-export default AddUpadteDocPage;
+export default sectorAddUpdateDocPage;

@@ -98,12 +98,12 @@ describe('adminManageDocuments',()=>
        })
     })
 
-    it('AdvancFilter',()=>
+    it.only('AdvancFilter',()=>
     {
      cy.fixture('usersData').then(function(data)
      {
-         addDoc.AdvancedFilter(data.sector,data.dep,data.type,"مفعل")
-         cy.FindSpeceficContent()
+         addDoc.AdvancedFilter(data.docNameUp,data.sector,data.dep,data.type,"مفعل")
+         
          
  
      })

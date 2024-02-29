@@ -5,8 +5,8 @@ describe('CheckEmployeeAttendence',()=>
     const hpage=new homePage()
     beforeEach(()=>
     {
-        cy.on('uncaught:exception', (err, runnable) => {
-            console.error('Uncaught exception:');
+        cy.on("fail", (err, runnable) => {
+            cy.log("This Employee doesn't exists in Employee Dictionary");
             return false;
           });
         cy.visit('/')
