@@ -17,7 +17,7 @@
             cy.get(':nth-child(7) > :nth-child(5) > .text-black').then($emp=>
                 {
                   const direct=$emp.text()
-                  if(direct.includes(manager))
+                  if(direct.includes(manager) && manager !='')
                   {
                      cy.log("exist")
                      cy.get(':nth-child(7) > :nth-child(5) > .text-black').should('contain',manager)

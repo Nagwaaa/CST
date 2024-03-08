@@ -14,6 +14,9 @@ import 'cypress-file-upload'
 //
 // -- This is a parent command --
 //
+
+
+
     const login=new LoginPage()
     Cypress.Commands.add('login', (username, password) => {
         
@@ -38,6 +41,16 @@ import 'cypress-file-upload'
         cy.get('.btn-light.ng-star-inserted').contains(day).click()
     })
 
+    Cypress.Commands.add('CalenderWithTime', (year,month,day,hour,min) => { 
+        cy.get(".date-picker-icon").click()
+        cy.get('[title="Select year"]').select(year)
+        cy.get('[title="Select month"]').select(month)
+        cy.get('.btn-light.ng-star-inserted').contains(day).click()
+        cy.get('.ng-touched > fieldset > .ngb-tp > .ngb-tp-hour > .ngb-tp-input').type(hour)
+        cy.get('.ng-touched > fieldset > .ngb-tp > .ngb-tp-minute > .ngb-tp-input',min)
+
+    })
+
 
     Cypress.Commands.add('GetUserName', () => { 
         
@@ -50,12 +63,7 @@ import 'cypress-file-upload'
             return username
         })
         
-        /*
-        cy.get(':nth-child(1) > .text').then((username)=>
-        {
-            let uname=username.text()
-            
-        })*/
+      
          
         
     })
@@ -66,8 +74,9 @@ import 'cypress-file-upload'
     })
 
     Cypress.Commands.add('SearchFor', (selector,word) => { 
-        cy.get(selector).type(word)
+        cy.get(selector).clear().type(word)
     })
+
 
     Cypress.Commands.add('FindSpeceficContent', (ele,sel) => { 
 

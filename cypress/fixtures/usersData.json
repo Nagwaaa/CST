@@ -5,20 +5,23 @@
 
     "sectorName":"tjonaid",
     "sectorPassword":"P@ssw0rd",
+
     "usernameInv":"abc",
     "passwordInv":"123",
+
     "invMessage":"خطأ في اسم المستخدم أو كلمة مرور!",
     "userNameRequired":"الحقل اسم المستخدم أو البريد الالكتروني إجباري.",
     "passwordRequired":"الحقل كلمه السر إجباري.",
 
     "Contain":" الوثائق قيد الاعتماد",
     
-    "docName":"DocumentArabic",
+    "docName":"DocumentArabic3",
     "nameEN":"Document for automation",
     "docNameSup":"انجلش وثيقة فور اتوميشن",
     "nameENsup":"Document for automation",
-    "docNameUp":"تعديل وثيقة فور اتوميشن1",
-    "nameENup":"Document for automation updat1",
+
+    "docNameUp":"Document for automation updatAR",
+    "nameENup":"Document for automation updatEN",
     
     "sector":"قطاع الطيف الترددي",
     "dep":"الإدارة العامة لتخطيط الطيف الترددي",
@@ -34,8 +37,22 @@
     "annoucTitle":"تعميم فور اتوميشن",
     "announcementDesc":"Description",
     "employeeName":"افراح حمد محمد a",
-    "newName":"NewsForAutomation",
-    "newsDesc":"New Description"
+
+    "newName":"testNewAuton",
+    "newNameUpdate":"update test news",
+    "newsSupport":"NewSupportEng",
+    "newsDesc":"New Description",
+    "usernameNotExiest":"نجوي ابراهيم سيد",
+    "desc":"\n1. يقوم المستخدم بإدخال من التاريخ ومن الساعة 8 مساءً\n 2. يقوم المستخدم بإدخال الى التاريخ وإلى الساعة 11:59 مساءً\n3. يقوم النظام بالتأكد من مدة البقاء في العمل لا تتعدي ال 5 أيام في الطلب الواحد\n4. يقوم المستخدم باختيار سبب البقاء في العمل من القائمة",
+ 
+
+     "Sername":"طلب تعويض اجازت",
+     "UpdatServName":"تعديل طلب تعويض اجازات",
+     "SmainCategory":"الموارد البشرية",
+     "SsubCategory":"رحلات العمل",
+     "Sstatus":"مفعل"
+
+    
     
 
 

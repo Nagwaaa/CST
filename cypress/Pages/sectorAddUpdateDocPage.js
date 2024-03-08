@@ -1,6 +1,12 @@
 class sectorAddUpdateDocPage
 {
 
+    ClicksOnSuspend()
+   {
+       cy.get(".icon-menu-container").click()
+       cy.get("#CMSService\\:\\:Menu\\:Settings").click('center')
+       cy.get('#CMSService\\:\\:Menu\\:SuspendedDocumentLibrary').click()
+   }
 
     clickOnAddDocument()
     {
@@ -57,15 +63,16 @@ class sectorAddUpdateDocPage
 
     deleteAttachmentInUpdate()
     {
-        cy.get('.btn.btn-light.ng-star-inserted').first().click()
+        cy.get('#AttachmentAr > #Attachmentfiles > .p-fileupload > .p-fileupload-content > .cst-files > .file > .file-action > :nth-child(1) > .icon-x').click()
         cy.get('#confirm').click()
     }
 
     deleteAttachInUpdateSupport()
     { 
-        cy.get('.btn.btn-light.ng-star-inserted').first().click()
+        cy.get('#AttachmentAr > #Attachmentfiles > .p-fileupload > .p-fileupload-content > .cst-files > .file > .file-action > :nth-child(1) > .icon-x').click()
         cy.get('#confirm').click()
-        cy.get('.btn.btn-light.ng-star-inserted').eq(1).click()
+        cy.wait(1000)
+        cy.get('#AttachmentEn > #Attachmentfiles > .p-fileupload > .p-fileupload-content > .cst-files > .file > .file-action > :nth-child(1) > .icon-x').click()
         cy.get('#confirm').click()
         
     }

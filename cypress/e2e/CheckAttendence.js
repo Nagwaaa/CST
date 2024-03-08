@@ -1,14 +1,12 @@
+
 import homePage from '../Pages/homePage'
 
 describe('CheckEmployeeAttendence',()=>
 {
     const hpage=new homePage()
+
     beforeEach(()=>
     {
-        cy.on("fail", (err, runnable) => {
-            cy.log("This Employee doesn't exists in Employee Dictionary");
-            return false;
-          });
         cy.visit('/')
         cy.fixture('usersData').then(function(userPassword)
         {
@@ -16,7 +14,6 @@ describe('CheckEmployeeAttendence',()=>
            cy.wait(1000)
         })
     })
-
 
     it('CheckEmplyeePresent',()=>
     {
@@ -33,7 +30,20 @@ describe('CheckEmployeeAttendence',()=>
        
     })
 
-  
-
-    
+    it("CheckEmplyeeNotExistInEmployeeDirectoryTC",()=>
+    {
+        hpage.ClicksOnEmployeeGuides()
+        cy.fixture('usersData').then(function(data)
+        {
+            cy.get('#employee-guide-search-input').clear().type(data.usernameNotExiest)
+            cy.get('.nodata-message.ng-star-inserted').should('have.text','لا يوجد موظفين مطابقين للبحث او التصفية')
+            cy.log('لا يوجد موظفين مطابقين للبحث او التصفية')
+            cy.get('.close-icon > .icon-x').click()
+                
+            
+        })
+       
+    })
 })
+
+   

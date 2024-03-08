@@ -1,7 +1,6 @@
 import LoginPage from '../Pages/LoginPage'
 import homePage from '../Pages/homePage'
 
-//to run dashboard use "npm run Dashboard"
 // Login to CST With diffrent cases     
 describe('loginToCST',()=>
 {
@@ -11,11 +10,6 @@ describe('loginToCST',()=>
     beforeEach(()=>
     {
         cy.visit('/')
-        /* this code to pass all fail testcases 
-        cy.on('fail', (err, runnable) => {
-             //return true; 
-             console.log(err.message)
-        })*/
 
     })
 
@@ -32,7 +26,6 @@ describe('loginToCST',()=>
     {
         cy.fixture('usersData').then(function(userPassword)
         {
-            // login function exists in command.js file
             cy.login(userPassword.usernameInv,userPassword.passwordInv)
             cy.get('.alert.alert-danger.alert-dismissible.fade.show').should('contain',userPassword.invMessage)
         })

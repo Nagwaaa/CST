@@ -32,6 +32,7 @@ class homePage
         cy.get('#employee-guide-search-input').clear().type(name)
         cy.wait(2000)
         cy.get('.d-flex.flex-wrap.align-items-center').click()
+           
         //cy.wait(2000)
 
         cy.get('.badge').then(($el)=>
@@ -48,19 +49,11 @@ class homePage
                 cy.log('Not available')
             }else
             {
-                cy.log("This Employee doesn't in Employee Directory")
+                cy.log("This Staus doesn't defined")
             }
         })
     }
 
-/*
-    UpdateFavoriteServices(serveceName)
-    {
-       cy.get('#customization-menu').click({force: true})
-       cy.wait(1000)
-       cy.get('.service-view.ng-star-inserted').first().type(serveceName)
-       cy.get('.service-edit-action')
-    }*/
 
 
     getMainMenu()

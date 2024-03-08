@@ -7,5 +7,6 @@ class deleteDocPage
       cy.get('#confirm').click()
    }
 
+
 }
 export default deleteDocPage;

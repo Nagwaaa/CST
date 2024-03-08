@@ -98,7 +98,7 @@ describe('adminManageDocuments',()=>
        })
     })
 
-    it.only('AdvancFilter',()=>
+    it('AdvancFilter',()=>
     {
      cy.fixture('usersData').then(function(data)
      {
